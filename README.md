@@ -25,3 +25,16 @@
 ---
 
 ## 📁 Структура проекта
+src/
+└── airportapp/
+├── Main.java # Точка входа
+├── model/ # Классы данных
+│ ├── Tariff.java
+│ ├── Airport.java
+│ ├── DiscountStrategy.java
+│ ├── FixedDiscount.java
+│ ├── NoDiscount.java
+│ └── InvalidTariffException.java
+└── view/ # GUI-компоненты
+├── MainWindow.java
+└── TariffEditDialog.java
