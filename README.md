@@ -24,17 +24,86 @@
 
 ---
 
-## 📁 Структура проекта
-src/
-└── airportapp/
-├── Main.java # Точка входа
-├── model/ # Классы данных
-│ ├── Tariff.java
-│ ├── Airport.java
-│ ├── DiscountStrategy.java
-│ ├── FixedDiscount.java
-│ ├── NoDiscount.java
-│ └── InvalidTariffException.java
-└── view/ # GUI-компоненты
-├── MainWindow.java
-└── TariffEditDialog.java
+
+---
+
+## 🖼️ Скриншоты интерфейса
+
+*(Рекомендуется добавить 1–2 скриншота после сборки: главное окно и диалог добавления)*
+
+---
+
+## 📐 UML-диаграмма классов
+
+![UML Diagram](https://www.plantuml.com/plantuml/png/XP1DIyCm48Nl-HNI42rLq4xGm5Ld9LmW8dLp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cN......)
+
+> ⚠️ *Ссылка выше — заглушка. Чтобы сгенерировать реальную диаграмму:*
+> 1. Скопируй [код PlantUML из отчёта](#uml-диаграмма-ниже)
+> 2. Вставь на [https://www.plantuml.com/plantuml](https://www.plantuml.com/plantuml)
+> 3. Сохрани изображение и замени ссылку
+
+### Код PlantUML (для генерации диаграммы)
+
+```plantuml
+@startuml
+package "model" {
+  class Tariff {
+    - destination: String
+    - basePrice: double
+    - discountStrategy: DiscountStrategy
+    + Tariff(destination: String, basePrice: double, discountStrategy: DiscountStrategy)
+    + getDestination(): String
+    + getBasePrice(): double
+    + getPrice(): double
+    + toString(): String
+  }
+
+  class Airport {
+    - tariffs: List<Tariff>
+    + addTariff(tariff: Tariff): void
+    + removeTariff(tariff: Tariff): boolean
+    + getTariffs(): List<Tariff>
+    + findMaxPriceTariff(): Tariff
+    + saveToFile(filename: String): void
+    + loadFromFile(filename: String): void
+  }
+
+  interface DiscountStrategy {
+    + applyDiscount(basePrice: double): double
+  }
+
+  class NoDiscount {
+    + NoDiscount()
+    + applyDiscount(basePrice: double): double
+  }
+
+  class FixedDiscount {
+    - discountAmount: double
+    + FixedDiscount(discountAmount: double)
+    + applyDiscount(basePrice: double): double
+  }
+
+  class InvalidTariffException {
+    + InvalidTariffException(message: String)
+  }
+}
+
+package "view" {
+  class MainWindow
+  class TariffEditDialog
+  class TariffTableModel
+}
+
+class Main
+
+Tariff --> "1" DiscountStrategy
+Airport --> "0..*" Tariff
+FixedDiscount ..|> DiscountStrategy
+NoDiscount ..|> DiscountStrategy
+InvalidTariffException --|> Exception
+
+MainWindow --> "1" Airport
+MainWindow --> TariffEditDialog : creates
+TariffEditDialog --> Tariff : returns
+Main --> MainWindow : creates
+@enduml
