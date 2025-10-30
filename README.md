@@ -35,9 +35,7 @@
 
 ## 📐 UML-диаграмма классов
 
-![UML Diagram](https://www.plantuml.com/plantuml/png/XP1DIyCm48Nl-HNI42rLq4xGm5Ld9LmW8dLp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cNq9Lp5cN......)
 
-> ⚠️ *Ссылка выше — заглушка. Чтобы сгенерировать реальную диаграмму:*
 > 1. Скопируй [код PlantUML из отчёта](#uml-диаграмма-ниже)
 > 2. Вставь на [https://www.plantuml.com/plantuml](https://www.plantuml.com/plantuml)
 > 3. Сохрани изображение и замени ссылку
